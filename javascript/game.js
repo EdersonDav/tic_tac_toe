@@ -1,35 +1,39 @@
 // Init vars
-// let board = ["","","","","","","","",""]
 let ids = []
 let player = 0
-let symbols = ["x","o"]
+let symbols = ["x", "o"]
+let gameOver = false
 
-function getSymbol(id){
-  
-  if(!ids.includes(id))
-  {
+//Mapping of victories
+mappVictory = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+]
+
+function getSymbol(id) {
+
+  if (!ids.includes(id)) {
     ids.push(id)
 
-    player = player == 0 ? player = 1 : player = 0
-
     let symbol = symbols[player]
-    
+
     return symbol
-    
-  }else{
+
+  } else {
     return alert("ja esta preenchido")
   }
-  
-
 }
 
-// function handleMove(position){
-
-//   if(board[position] == "")
-//   {
-//     board[position] = symbols[player] 
+// function verifyVictory(){
+//   for(let mapp of mappVictory){
+//     for(let map of mapp){
+//       if(map == )
+//     }
 //   }
-
-//   player = player == 0 ? player = 1 : player = 0
-
 // }

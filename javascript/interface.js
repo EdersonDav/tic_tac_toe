@@ -1,48 +1,30 @@
 //onload page
-document.addEventListener('DOMContentLoaded', () =>{
-  
+document.addEventListener('DOMContentLoaded', () => {
+
   let squares = document.querySelectorAll('.square')
 
-  squares.forEach((square)=>{
+  squares.forEach((square) => {
     square.addEventListener('click', insertSimbol)
   })
 
 })
+let test = document.getElementById("1")
+function insertSimbol(event) {
 
-function insertSimbol(event){
 
   let id = event.target.id
 
-  let div = document.getElementById(`${id}`)
+  let div = document.getElementById(`${id.toString()}`)
 
   let symbol = getSymbol(id)
 
-  div.innerHTML += `<div class="${symbol}"></div>`
+  try {
+
+    div.innerHTML += `<div class="${symbol}"></div>`
+
+    player = player == 0 ? 1 : 0
+
+  } catch (e) {
+    console.log(e)
+  }
 }
-
-// function handler (event){
-
-//   let position = event.target.id
-
-//   handleMove(position)
-
-//   updateHTML()
-
-// }
-
-// function updateHTML(){
-
-//   let squares = document.querySelectorAll('.square')
-
-//   squares.forEach((square)=>{
-
-//     let position = square.id
-//     let symbol = board[position]
-
-//     if(symbol != '')
-//     {
-//       square.innerHTML = `<div class="${symbol}"></div>`
-//     }
-
-//   })
-// }
