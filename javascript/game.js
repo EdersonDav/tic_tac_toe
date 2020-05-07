@@ -1,6 +1,6 @@
 // Init vars
 let symbols = ["x", "o"]
-let board = ["","","","","","","","",""]
+let board = ["", "", "", "", "", "", "", "", ""]
 let ids = []
 let player = 0
 let gameOver = true
@@ -34,30 +34,29 @@ function getSymbol(id) {
   }
 }
 
-function verifyVictory(){
-  for(let i = 0 ; i< mappVictory.length; i++){
+function verifyVictory() {
+  for (let i = 0; i < mappVictory.length; i++) {
 
     let seq = mappVictory[i]
 
     let pos1 = seq[0]
     let pos2 = seq[1]
     let pos3 = seq[2]
-    
-    if(!board.includes("")){
+    console.log(pos1, pos2, pos3);
 
-      if(board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != ""){
-        return true
-      }else{
-        noWin = true
-        return true
-      }
-    }else if(board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != ""){
+
+    console.log("Rafa eu te amo" + board);
+
+    if (board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != "") {
       return true
-
     }
 
   }
+  if (!board.includes("")) {
+    noWin = true
+    return true
+  }
 
   return false
-  
+
 }
