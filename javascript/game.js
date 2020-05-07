@@ -1,8 +1,10 @@
 // Init vars
+let symbols = ["x", "o"]
+let board = ["","","","","","","","",""]
 let ids = []
 let player = 0
-let symbols = ["x", "o"]
-let gameOver = false
+let gameOver = true
+let noWin = false
 
 //Mapping of victories
 mappVictory = [
@@ -23,6 +25,8 @@ function getSymbol(id) {
 
     let symbol = symbols[player]
 
+    board[id] = symbol
+
     return symbol
 
   } else {
@@ -30,10 +34,30 @@ function getSymbol(id) {
   }
 }
 
-// function verifyVictory(){
-//   for(let mapp of mappVictory){
-//     for(let map of mapp){
-//       if(map == )
-//     }
-//   }
-// }
+function verifyVictory(){
+  for(let i = 0 ; i< mappVictory.length; i++){
+
+    let seq = mappVictory[i]
+
+    let pos1 = seq[0]
+    let pos2 = seq[1]
+    let pos3 = seq[2]
+    
+    if(!board.includes("")){
+
+      if(board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != ""){
+        return true
+      }else{
+        noWin = true
+        return true
+      }
+    }else if(board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != ""){
+      return true
+
+    }
+
+  }
+
+  return false
+  
+}
