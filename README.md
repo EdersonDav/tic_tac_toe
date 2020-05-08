@@ -7,7 +7,7 @@
   <li>Clone repository</li>
   <li>Start file index.html</li>
 </ul>
-<h2>&#128187 Technology used</ul>
+<h2>&#128187 Technology used</h2>
 <ul>
   <li>Javascript</li>
   <li>HTML</li>
